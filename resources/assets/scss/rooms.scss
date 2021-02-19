@@ -1,0 +1,143 @@
+.rooms {
+  padding: 50px 0;
+  //min-height: 100vh;
+  &__booking {
+    //visibility: hidden;
+    width: 200px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .tabs__items {
+    display: flex;
+    justify-content: space-around;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  .tabs__item {
+    padding: 5px;
+    flex: 0 0 25%;
+    display: flex;
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+    border: none;
+    -webkit-box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    &.active {
+      background-color: darkgrey;
+      color: #fff;
+      outline: none;
+    }
+  }
+
+  // .tabs__body{
+
+  //  }
+  .tabs__block {
+    p {
+      line-height: 35px;
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 30px;
+    }
+  }
+  .tabs__slider {
+    width: 100%;
+    height: 350px;
+  }
+  .tabs__slide {
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+}
+.slide__wrapper {
+  width: 100%;
+  min-height: 300px;
+}
+
+.rooms__track {
+  display: flex;
+  height: 300px;
+  overflow-x: scroll;
+}
+.rooms__gallery {
+  position: relative;
+}
+.rooms__track a {
+  width: auto;
+  display: inline;
+  margin-right: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.rooms__track a:hover {
+  opacity: 0.6;
+}
+.rooms__track img {
+  height: 300px;
+}
+.rooms__btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  background-color: rgba(85, 81, 81, 0.8);
+  border: none;
+  padding: 0;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-20px);
+  color: #fff;
+  outline: none;
+}
+.btn__prew {
+  left: 10px;
+}
+.btn__next {
+  right: 10px;
+}
+.fancybox-content img {
+  height: 100%;
+  max-height: 90vh;
+}
+.container.rooms__info {
+  padding: 50px 0;
+}
+.rooms__info {
+  display: flex;
+  justify-content: space-around;
+  text-align: justify;
+}
+.rooms__title {
+  flex-basis: 50%;
+  h3 {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 960px) {
+  .rooms {
+    &__info {
+      flex-flow: column;
+    }
+    .container.rooms__info {
+      padding: 40px 20px;
+    }
+    &__booking {
+      margin: 20px auto;
+    }
+  }
+}
