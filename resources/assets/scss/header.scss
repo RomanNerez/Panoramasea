@@ -1,0 +1,392 @@
+.header {
+  background-image: url("http://dev.panoramasea.ru/public/images/header-min.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+  }
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    video {
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+  }
+  &__content {
+    height: 100%;
+    position: relative;
+    color: #fff;
+  }
+  &__menu {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+  }
+  &__list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    li {
+      min-height: 100px;
+
+      a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        color: #fff;
+        padding: 0 30px;
+        border-bottom: 2px solid transparent;
+        transition: all 0.25s;
+        &:hover {
+          border-bottom: 1px solid #ffc700;
+          color: #ffc700;
+        }
+      }
+    }
+    .close__btn {
+      display: none;
+    }
+  }
+  &__booking {
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 100%;
+    transition: all 0.25s;
+    &:hover {
+      color: #ffc700;
+    }
+  }
+  &__logo {
+    max-width: 700px;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+  &__arrow {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    cursor: pointer;
+    animation-name: arrow-jump;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  &__links {
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+    width: 40px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__link {
+    width: 30px;
+    height: 30px;
+    &:hover {
+      fill: #ffc700;
+    }
+  }
+  &__form.pop {
+    display: block;
+  }
+}
+@keyframes arrow-jump {
+  // 0%{transform: rotate(-20deg);}
+  // 25%{transform: rotate(29px);}
+  // 0%{transform: rotate(-20deg) ;}
+  // 0%{transform: rotate(20px);}
+
+  0% {
+    transform: translateY(-20px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.menu__btn {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  display: none;
+  span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    &:before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 4px;
+      background-color: #fff;
+      bottom: 0;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 4px;
+      background-color: #fff;
+      top: 50%;
+      margin-top: -2px;
+    }
+  }
+  &:hover {
+    span {
+      background-color: #ccc;
+      &:before,
+      &:after {
+        background-color: #ccc;
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .header {
+    background-image: url("http://dev.panoramasea.ru/public/images/header-bg.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    &__video {
+      video {
+        display: none;
+      }
+    }
+    &__list {
+      a {
+        font-size: 14px;
+        &:hover {
+        }
+      }
+    }
+    &__booking {
+      &:hover {
+        color: darkgray;
+      }
+    }
+    &__link {
+      width: 20px;
+      height: 20px;
+    }
+    &__form {
+      right: 50%;
+      margin-right: -125px;
+      form {
+        input,
+        button {
+        }
+        button[type="submit"] {
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  body.lock {
+    overflow: hidden;
+  }
+  .header {
+    &__list {
+      display: none;
+      padding-top: 70px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      background-color: #fff;
+      z-index: 2;
+      a {
+        font-size: 24px;
+        font-weight: 300;
+        border: none;
+        color: #000 !important;
+        &:hover {
+          border: none;
+        }
+      }
+      .close__btn {
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        content: "";
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        background-image: url("http://dev.panoramasea.ru/public/images/cancel.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      &.active {
+        display: block;
+      }
+    }
+    &__list.closed {
+      display: none;
+    }
+    &__booking {
+      margin-left: auto;
+    }
+    &__links {
+      bottom: 50px;
+    }
+    &__form {
+      top: 400px;
+      right: 50%;
+      margin-right: -159px;
+      margin-top: -110px;
+    }
+  }
+  .menu__btn {
+    display: block;
+  }
+}
+.modal {
+  &__close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: transparent;
+      &:after {
+        left: 0;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transform: rotate(-45deg);
+      }
+      &:before {
+        left: 0;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        transform: rotate(45deg);
+        background-color: #000;
+      }
+    }
+  }
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+  &__wrapper {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-175px);
+    width: 350px;
+    min-height: 400px;
+    padding: 20px;
+    background-color: #fff;
+    @media (max-width: 350px) {
+      width: 100%;
+      left: 0;
+      transform: initial;
+    }
+  }
+  form {
+    label {
+      font-size: 14px;
+    }
+    legend {
+      font-size: 24px;
+      text-align: center;
+    }
+    fieldset {
+      border: none;
+    }
+    input {
+      color: #000;
+      font-size: 12px;
+      padding: 10px 20px;
+      display: block;
+      width: 100%;
+      background-color: rgb(230, 230, 230);
+      border: none;
+      margin-bottom: 10px;
+    }
+    button[type="submit"] {
+      max-width: 300px;
+      margin: 30px auto 0 auto;
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+  }
+}
+//messega after modal will be closed
+.modal__message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+  transform: translateX(-150px) translateY(-100px);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}

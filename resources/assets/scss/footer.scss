@@ -1,0 +1,131 @@
+.footer{
+    a{
+        color: #fff;
+    }
+    padding: 20px 0;
+    background-color: #565656;
+    color: #fff;
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+
+    }
+    &__left,
+    &__right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    &__left{
+        flex-basis: 50%;
+
+    }
+    &__right{
+        flex-basis: 50%;
+
+    }
+    &__phone{
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+            margin-right: 20px;
+        }
+        
+
+    }
+    &__email{
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+            margin-right: 20px;
+        }
+
+    }
+    &__addres{
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+            margin-right: 20px;
+        }
+
+    }
+    &__socials{
+       a{
+        color: #04EEFD;
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+            svg{
+                margin-right: 20px;
+            }
+
+       } 
+
+    }
+}
+@media(max-width: 960px){
+    .footer{
+        padding: 50px;
+        &__wrapper{
+    
+        }
+        &____left{
+    
+        }
+        &____right{
+    
+        }
+        &__phone{
+           
+        }
+        &__email{
+    
+        }
+        &__addres{
+    
+        }
+        &__socials{
+    
+        }
+    }
+}
+@media(max-width: 768px){
+    .footer{
+        &__wrapper{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+        }
+        &____left{
+    
+        }
+        &____right{
+    
+        }
+        &__phone, 
+        &__email,
+        &__addres,
+        &__socials{
+            margin-bottom: 30px;
+    
+        }
+        &__email{
+    
+        }
+        &__addres{
+    
+        }
+        &__socials{
+    
+        }
+    }
+}

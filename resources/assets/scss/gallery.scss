@@ -1,0 +1,25 @@
+.gallery{
+
+    &__wrapper{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item{
+        min-width: 200px;
+        min-height: 200px;
+        margin: 3px;
+        flex-grow: 1;
+        &:nth-child(odd){
+            flex-grow: 2;
+        }
+    }
+
+}
+@media(max-width: 768px){
+    .gallery{
+        &__wrapper{
+
+        }
+    }
+}
